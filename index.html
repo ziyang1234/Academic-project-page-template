@@ -116,29 +116,8 @@
                 <span class="author-block">Authors to be updated</span>
               </div>
 
-              <div class="publication-venue">CVPR 2026 Submission</div>
-
-              <p class="hero-tagline">
-                A benchmark that evaluates whether multimodal models can understand not only what happens in a video, but why it is creatively constructed that way.
-              </p>
-
-              <div class="stats-strip">
-                <div class="stat-pill">
-                  <strong>6</strong>
-                  <span>Primary dimensions</span>
-                </div>
-                <div class="stat-pill">
-                  <strong>29</strong>
-                  <span>Fine-grained sub-dimensions</span>
-                </div>
-                <div class="stat-pill">
-                  <strong>1,122</strong>
-                  <span>Full videos</span>
-                </div>
-                <div class="stat-pill">
-                  <strong>831</strong>
-                  <span>Cinematic clips</span>
-                </div>
+              <div class="is-size-6 publication-affiliations">
+                Affiliations to be updated
               </div>
 
               <div class="publication-links">
@@ -177,35 +156,286 @@
 
     <section class="section hero is-light">
       <div class="container is-max-desktop">
-        <div class="columns is-centered">
-          <div class="column is-four-fifths">
-            <h2 class="title is-3 has-text-centered">Overview</h2>
-            <div class="content has-text-justified">
-              <p>
-                Recent multimodal large language models can describe visible objects and actions, but they still struggle to recover the deeper creative logic behind professional video production. Existing benchmarks largely treat videos as temporal sequences of frames, which leaves major gaps in narrative reasoning, cinematographic understanding, editing analysis, and audio-visual coordination.
-              </p>
-              <p>
-                CUBench addresses this gap by reverse-engineering the full creative lifecycle of video production. It evaluates models across creativity, plot understanding, script reconstruction, intra-shot expression, inter-shot expression, and music, using a hybrid evaluation pipeline that combines expert-calibrated judging for abstract semantics with deterministic matching for objective cinematic grammar.
-              </p>
-            </div>
-          </div>
+        <h2 class="title is-3 has-text-centered">Overview</h2>
+        <div class="content has-text-justified section-narrow">
+          <p>
+            Recent Multimodal Large Language Models have shown strong performance on video captioning, action recognition, and visual question answering, but current benchmarks still mostly treat videos as sequences of dynamic frames and focus on shallow objective perception. They remain weak at recovering the deeper creative logic of real-world video production, including narrative intent, script structure, cinematographic design, editing syntax, and audio-visual coordination.
+          </p>
+          <p>
+            CUBench is designed to bridge this gap by evaluating models through the full creative lifecycle of video production. It reverse-engineers video understanding into six industrial dimensions that mirror professional production roles, from director-level creativity and screenwriter-style plot understanding to shot composition, editing, and music. This design pushes evaluation beyond surface recognition toward deeper multimodal creative reasoning.
+          </p>
         </div>
+        <figure class="paper-figure">
+          <iframe src="static/pdfs/cubench_pipeline.pdf#view=FitH" title="CUBench pipeline figure"></iframe>
+          <figcaption><strong>Figure 1.</strong> The overall pipeline of the proposed Creative Understanding Benchmark.</figcaption>
+        </figure>
       </div>
     </section>
 
     <section class="section">
       <div class="container is-max-desktop">
-        <div class="columns is-centered has-text-centered">
-          <div class="column is-four-fifths">
-            <h2 class="title is-3">Abstract</h2>
-            <div class="content has-text-justified">
-              <p>
-                While recent Multimodal Large Language Models (MLLMs) excel at surface-level video perception, they fundamentally struggle to interpret the complex creative intents and artistic synthesis inherent in professional video production. Existing benchmarks predominantly treat videos as shallow temporal sequences, ignoring sophisticated macro-level narrative intents and micro-level cinematographic techniques. To bridge this critical gap, we introduce the Creative Understanding Benchmark (CUBench), the first comprehensive omni-modal evaluation framework that assesses MLLMs by reverse-engineering the full-lifecycle video creation process.
-              </p>
-              <p>
-                CUBench systematically deconstructs video comprehension into six core industrial dimensions that mirror professional film production roles, spanning 29 fine-grained sub-dimensions. We curate a high-quality dataset of 1,122 full videos and 831 cinematic clips, rigorously annotated by domain experts. Extensive benchmarking reveals severe shortcomings in state-of-the-art MLLMs regarding implicit narrative reasoning and cinematic grammar, with the leading model scoring only 55.94%.
-              </p>
-            </div>
+        <h2 class="title is-3 has-text-centered">Comparison of Benchmarks</h2>
+        <div class="table-wrapper">
+          <table class="paper-table comparison-table">
+            <thead>
+              <tr>
+                <th>Dataset</th>
+                <th>Creativity</th>
+                <th>Script</th>
+                <th>Plot</th>
+                <th>Shot</th>
+                <th>Cut</th>
+                <th>Transition</th>
+                <th>Music</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>MovieCuts</td>
+                <td>&times;</td>
+                <td>&times;</td>
+                <td>&times;</td>
+                <td>&times;</td>
+                <td>&#10003;</td>
+                <td>&times;</td>
+                <td>&times;</td>
+              </tr>
+              <tr>
+                <td>AutoTransition</td>
+                <td>&times;</td>
+                <td>&times;</td>
+                <td>&times;</td>
+                <td>&times;</td>
+                <td>&times;</td>
+                <td>&#10003;</td>
+                <td>&times;</td>
+              </tr>
+              <tr>
+                <td>AVE</td>
+                <td>&times;</td>
+                <td>&times;</td>
+                <td>&times;</td>
+                <td>&#10003;</td>
+                <td>&times;</td>
+                <td>&times;</td>
+                <td>&times;</td>
+              </tr>
+              <tr>
+                <td>AVE-PM</td>
+                <td>&times;</td>
+                <td>&times;</td>
+                <td>&times;</td>
+                <td>&#10003;</td>
+                <td>&times;</td>
+                <td>&times;</td>
+                <td>&#10003;</td>
+              </tr>
+              <tr>
+                <td>Shot2Story</td>
+                <td>&times;</td>
+                <td>&times;</td>
+                <td>&times;</td>
+                <td>&#10003;</td>
+                <td>&times;</td>
+                <td>&times;</td>
+                <td>&times;</td>
+              </tr>
+              <tr>
+                <td>VEU-Bench</td>
+                <td>&times;</td>
+                <td>&times;</td>
+                <td>&times;</td>
+                <td>&#10003;</td>
+                <td>&#10003;</td>
+                <td>&#10003;</td>
+                <td>&times;</td>
+              </tr>
+              <tr>
+                <td>ShotBench</td>
+                <td>&times;</td>
+                <td>&times;</td>
+                <td>&times;</td>
+                <td>&#10003;</td>
+                <td>&times;</td>
+                <td>&times;</td>
+                <td>&times;</td>
+              </tr>
+              <tr>
+                <td>CameraBench</td>
+                <td>&times;</td>
+                <td>&times;</td>
+                <td>&times;</td>
+                <td>&#10003;</td>
+                <td>&times;</td>
+                <td>&times;</td>
+                <td>&times;</td>
+              </tr>
+              <tr class="highlight-row">
+                <td><strong>Ours (CUBench)</strong></td>
+                <td>&#10003;</td>
+                <td>&#10003;</td>
+                <td>&#10003;</td>
+                <td>&#10003;</td>
+                <td>&#10003;</td>
+                <td>&#10003;</td>
+                <td>&#10003;</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="table-caption"><strong>Table 1.</strong> Comparison of CUBench with existing video understanding benchmarks.</p>
+      </div>
+    </section>
+
+    <section class="section hero is-light">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3 has-text-centered">Statistics</h2>
+        <div id="statistics-carousel" class="carousel results-carousel stats-carousel">
+          <div class="item">
+            <img src="static/images/bench_data_schema_sunburst_internal_text.png" alt="CUBench schema statistics" loading="lazy">
+            <h2 class="subtitle has-text-centered">Dimension architecture and multilingual coverage.</h2>
+          </div>
+          <div class="item">
+            <img src="static/images/bench_data_mirror_bar_tech.png" alt="CUBench content and expression mapping" loading="lazy">
+            <h2 class="subtitle has-text-centered">Content and expression distribution across the evaluation set.</h2>
+          </div>
+          <div class="item">
+            <img src="static/images/bench_data_orientation_pie.png" alt="CUBench orientation statistics" loading="lazy">
+            <h2 class="subtitle has-text-centered">Balance between landscape and portrait video formats.</h2>
+          </div>
+          <div class="item">
+            <img src="static/images/bench_data_duration_bar.png" alt="CUBench duration statistics" loading="lazy">
+            <h2 class="subtitle has-text-centered">Coverage from short-form clips to ultra-long narratives.</h2>
+          </div>
+        </div>
+        <p class="table-caption"><strong>Figure 2.</strong> Comprehensive statistics of the CUBench evaluation set.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3 has-text-centered">Experiment Results</h2>
+        <div class="table-wrapper">
+          <table class="paper-table results-table">
+            <thead>
+              <tr>
+                <th>Model</th>
+                <th>Plot</th>
+                <th>Script</th>
+                <th>Creativity</th>
+                <th>Shot</th>
+                <th>Cut</th>
+                <th>Transition</th>
+                <th>Music</th>
+                <th>Avg.</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Qwen2.5-Omni-7B</td>
+                <td>08.42</td>
+                <td>20.33</td>
+                <td>18.81</td>
+                <td>37.05</td>
+                <td>28.23</td>
+                <td>47.10</td>
+                <td>22.58</td>
+                <td>26.07</td>
+              </tr>
+              <tr>
+                <td>Qwen3-Omni-30B</td>
+                <td>14.97</td>
+                <td>35.24</td>
+                <td>28.84</td>
+                <td>48.23</td>
+                <td>29.67</td>
+                <td>63.55</td>
+                <td>29.92</td>
+                <td>35.77</td>
+              </tr>
+              <tr>
+                <td>Qwen3-VL-8B</td>
+                <td>19.79</td>
+                <td>38.48</td>
+                <td>27.47</td>
+                <td>46.62</td>
+                <td>32.54</td>
+                <td>54.19</td>
+                <td>---</td>
+                <td>36.52</td>
+              </tr>
+              <tr>
+                <td>GLM-4.6v</td>
+                <td>26.09</td>
+                <td>42.55</td>
+                <td>37.35</td>
+                <td>44.60</td>
+                <td>37.32</td>
+                <td>55.48</td>
+                <td>---</td>
+                <td>40.57</td>
+              </tr>
+              <tr>
+                <td>GPT-5.2</td>
+                <td>35.69</td>
+                <td>50.18</td>
+                <td>35.68</td>
+                <td>53.49</td>
+                <td><strong>45.45</strong></td>
+                <td>61.94</td>
+                <td>---</td>
+                <td>47.07</td>
+              </tr>
+              <tr>
+                <td>Doubao-1.8</td>
+                <td>37.82</td>
+                <td>51.34</td>
+                <td>42.37</td>
+                <td>53.85</td>
+                <td>40.67</td>
+                <td><strong>71.94</strong></td>
+                <td>---</td>
+                <td>49.67</td>
+              </tr>
+              <tr>
+                <td>Kimi-2.5</td>
+                <td>40.08</td>
+                <td>58.14</td>
+                <td>42.57</td>
+                <td>46.62</td>
+                <td>44.98</td>
+                <td>71.61</td>
+                <td>---</td>
+                <td>50.67</td>
+              </tr>
+              <tr class="highlight-row">
+                <td><strong>Gemini-2.5-Pro</strong></td>
+                <td><strong>52.58</strong></td>
+                <td><strong>68.70</strong></td>
+                <td><strong>46.85</strong></td>
+                <td><strong>58.34</strong></td>
+                <td>43.54</td>
+                <td>70.00</td>
+                <td><strong>51.60</strong></td>
+                <td><strong>55.94</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="table-caption"><strong>Table 2.</strong> Comprehensive evaluation results of SOTA MLLMs on CUBench.</p>
+
+        <div id="analysis-carousel" class="carousel results-carousel analysis-strip">
+          <div class="item">
+            <img src="static/images/combined_radar_plot.png" alt="Radar chart of sub-dimension scores" loading="lazy">
+            <h2 class="subtitle has-text-centered">Sub-dimension scores across plot, creativity, script, music, and shot-related dimensions.</h2>
+          </div>
+          <div class="item">
+            <img src="static/images/confusion_matrix_cut.png" alt="Confusion matrix for cut classification" loading="lazy">
+            <h2 class="subtitle has-text-centered">Models often confuse cut types because they capture visual change without narrative context.</h2>
+          </div>
+          <div class="item">
+            <img src="static/images/failure_modes_distribution.png" alt="Failure mode taxonomy" loading="lazy">
+            <h2 class="subtitle has-text-centered">Low-scoring responses are dominated by semantic misinterpretation, hallucination, and missing key information.</h2>
           </div>
         </div>
       </div>
@@ -213,111 +443,7 @@
 
     <section class="section hero is-light">
       <div class="container is-max-desktop">
-        <h2 class="title is-3 has-text-centered">Benchmark Design</h2>
-        <div class="feature-grid">
-          <article class="feature-card">
-            <h3>Six industrial perspectives</h3>
-            <p>Director, Screenwriter, Script Supervisor, Cinematographer, Editor, and Composer jointly define the benchmark scope.</p>
-          </article>
-          <article class="feature-card">
-            <h3>Macro to micro evaluation</h3>
-            <p>Full-video evaluation captures global creative intent, while cinematic clips isolate local shot language and editing techniques.</p>
-          </article>
-          <article class="feature-card">
-            <h3>Hybrid evaluation protocol</h3>
-            <p>Expert-calibrated LLM judging handles open-ended semantics, and objective matching measures deterministic visual grammar.</p>
-          </article>
-        </div>
-
-        <div class="dimension-grid">
-          <div class="dimension-card">
-            <h4>Creativity</h4>
-            <p>Creative hook, strategic intent, and target audience.</p>
-          </div>
-          <div class="dimension-card">
-            <h4>Plot Understanding</h4>
-            <p>Synopsis, genre, narrative structure, character, theme, pacing, and emotional tone.</p>
-          </div>
-          <div class="dimension-card">
-            <h4>Script Reconstruction</h4>
-            <p>Rebuilding structured scripts from dialogues, expressions, effects, and timelines.</p>
-          </div>
-          <div class="dimension-card">
-            <h4>Intra-shot Expression</h4>
-            <p>Angle, framing, movement, lighting, shot size, and descriptive shot interpretation.</p>
-          </div>
-          <div class="dimension-card">
-            <h4>Inter-shot Expression</h4>
-            <p>Cut logic, transitions, pacing, and visual continuity across adjacent shots.</p>
-          </div>
-          <div class="dimension-card">
-            <h4>Music</h4>
-            <p>Genre, tempo, tone, and music atmosphere aligned with visual storytelling.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container is-max-desktop analysis-layout">
-        <h2 class="title is-3 has-text-centered">Figures and Analysis</h2>
-
-        <div class="analysis-block">
-          <h3 class="analysis-title">Benchmark Overview</h3>
-          <p class="analysis-text">
-            CUBench is organized around six production-oriented dimensions and 29 fine-grained sub-dimensions, covering the full pipeline from creative intent to shot composition, editing, and music.
-          </p>
-          <figure class="analysis-figure">
-            <img src="static/images/bench_data_schema_sunburst_internal_text.png" alt="CUBench dimension architecture" loading="lazy">
-            <figcaption>The benchmark taxonomy spans six primary dimensions and provides broad coverage of professional video creation concepts.</figcaption>
-          </figure>
-        </div>
-
-        <div class="analysis-block">
-          <h3 class="analysis-title">Statistics</h3>
-          <p class="analysis-text">
-            The dataset includes videos with different temporal spans so that evaluation is not limited to short clips or simplified editing patterns.
-          </p>
-          <figure class="analysis-figure">
-            <img src="static/images/bench_data_duration_bar.png" alt="CUBench duration distribution" loading="lazy">
-            <figcaption>CUBench includes short, medium, long, and ultra-long videos to stress-test sustained multimodal reasoning.</figcaption>
-          </figure>
-        </div>
-
-        <div class="analysis-block">
-          <h3 class="analysis-title">Experiment Results</h3>
-          <p class="analysis-text">
-            Performance varies sharply across dimensions, and the gap between explicit cue extraction and deeper creative reasoning remains substantial even for top-tier models.
-          </p>
-          <figure class="analysis-figure">
-            <img src="static/images/combined_radar_plot.png" alt="Radar chart of benchmark results" loading="lazy">
-            <figcaption>Sub-dimension results reveal a persistent weakness in abstract narrative reasoning and multimodal creative comprehension.</figcaption>
-          </figure>
-        </div>
-
-        <div class="analysis-two-column">
-          <div class="analysis-block compact">
-            <h3 class="analysis-title">Cut Understanding</h3>
-            <figure class="analysis-figure">
-              <img src="static/images/confusion_matrix_cut.png" alt="Confusion matrix for cut understanding" loading="lazy">
-              <figcaption>Models often confuse editing operations when they rely on surface-level visual shifts instead of narrative context.</figcaption>
-            </figure>
-          </div>
-
-          <div class="analysis-block compact">
-            <h3 class="analysis-title">Failure Modes</h3>
-            <figure class="analysis-figure">
-              <img src="static/images/failure_modes_distribution.png" alt="Failure mode distribution" loading="lazy">
-              <figcaption>Low-scoring samples are dominated by semantic misinterpretation, hallucination, and missing key information.</figcaption>
-            </figure>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section hero is-light">
-      <div class="container is-max-desktop">
-        <h2 class="title is-3 has-text-centered">Main Findings</h2>
+        <h2 class="title is-3 has-text-centered">Findings</h2>
         <div class="columns is-centered">
           <div class="column is-four-fifths">
             <div class="insight-list content">
@@ -327,6 +453,15 @@
               <p><strong>Audio-visual synergy remains difficult.</strong> Music understanding scores are modest, indicating that current multimodal systems still have limited ability to align soundtrack cues with visual storytelling.</p>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3 has-text-centered">Task Examples</h2>
+        <div class="placeholder-panel">
+          <p>Examples of benchmark tasks and qualitative cases will be added here.</p>
         </div>
       </div>
     </section>
