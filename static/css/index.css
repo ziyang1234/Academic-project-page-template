@@ -384,6 +384,72 @@ body {
   object-fit: contain;
 }
 
+.analysis-layout {
+  max-width: 920px;
+}
+
+.analysis-block {
+  margin: 0 auto 3rem;
+}
+
+.analysis-block.compact {
+  margin-bottom: 0;
+}
+
+.analysis-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+  text-align: center;
+}
+
+.analysis-text {
+  max-width: 760px;
+  margin: 0 auto 1.25rem;
+  text-align: center;
+  color: var(--text-secondary);
+  line-height: 1.75;
+}
+
+.analysis-figure {
+  margin: 0 auto;
+  padding: 1.5rem;
+  background: var(--background-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.analysis-figure img {
+  display: block;
+  width: 100%;
+  max-width: 760px;
+  max-height: 460px;
+  margin: 0 auto;
+  object-fit: contain;
+  border-radius: var(--border-radius);
+}
+
+.analysis-figure figcaption {
+  margin-top: 1rem;
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 0.97rem;
+  line-height: 1.7;
+}
+
+.analysis-two-column {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.analysis-two-column .analysis-figure img {
+  max-width: 100%;
+  max-height: 360px;
+}
+
 /* Pagination and Misc Improvements */
 .slider-pagination .slider-page {
   background: var(--primary-color);
@@ -623,7 +689,8 @@ code {
 
 @media screen and (max-width: 768px) {
   .feature-grid,
-  .dimension-grid {
+  .dimension-grid,
+  .analysis-two-column {
     grid-template-columns: 1fr;
   }
 
@@ -642,6 +709,10 @@ code {
 
   .hero-tagline {
     font-size: 1rem;
+  }
+
+  .analysis-figure {
+    padding: 1rem;
   }
 }
 
@@ -874,4 +945,3 @@ a:focus {
     box-shadow: none !important;
   }
 }
-

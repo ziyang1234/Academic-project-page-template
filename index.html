@@ -258,41 +258,58 @@
       </div>
     </section>
 
-    <section class="hero is-small">
-      <div class="hero-body">
-        <div class="container">
-          <h2 class="title is-3 has-text-centered">Figures and Analysis</h2>
-          <div id="results-carousel" class="carousel results-carousel analysis-carousel">
-            <div class="item">
-              <img src="static/images/bench_data_schema_sunburst_internal_text.png" alt="CUBench dimension architecture" loading="lazy">
-              <h2 class="subtitle has-text-centered">
-                The benchmark spans six primary industrial dimensions and 29 fine-grained sub-dimensions.
-              </h2>
-            </div>
-            <div class="item">
-              <img src="static/images/bench_data_duration_bar.png" alt="CUBench duration distribution" loading="lazy">
-              <h2 class="subtitle has-text-centered">
-                CUBench includes short, medium, long, and ultra-long videos to stress-test context reasoning.
-              </h2>
-            </div>
-            <div class="item">
-              <img src="static/images/combined_radar_plot.png" alt="Radar chart of benchmark results" loading="lazy">
-              <h2 class="subtitle has-text-centered">
-                Sub-dimension results reveal large gaps between explicit cue extraction and deeper creative reasoning.
-              </h2>
-            </div>
-            <div class="item">
+    <section class="section">
+      <div class="container is-max-desktop analysis-layout">
+        <h2 class="title is-3 has-text-centered">Figures and Analysis</h2>
+
+        <div class="analysis-block">
+          <h3 class="analysis-title">Benchmark Overview</h3>
+          <p class="analysis-text">
+            CUBench is organized around six production-oriented dimensions and 29 fine-grained sub-dimensions, covering the full pipeline from creative intent to shot composition, editing, and music.
+          </p>
+          <figure class="analysis-figure">
+            <img src="static/images/bench_data_schema_sunburst_internal_text.png" alt="CUBench dimension architecture" loading="lazy">
+            <figcaption>The benchmark taxonomy spans six primary dimensions and provides broad coverage of professional video creation concepts.</figcaption>
+          </figure>
+        </div>
+
+        <div class="analysis-block">
+          <h3 class="analysis-title">Statistics</h3>
+          <p class="analysis-text">
+            The dataset includes videos with different temporal spans so that evaluation is not limited to short clips or simplified editing patterns.
+          </p>
+          <figure class="analysis-figure">
+            <img src="static/images/bench_data_duration_bar.png" alt="CUBench duration distribution" loading="lazy">
+            <figcaption>CUBench includes short, medium, long, and ultra-long videos to stress-test sustained multimodal reasoning.</figcaption>
+          </figure>
+        </div>
+
+        <div class="analysis-block">
+          <h3 class="analysis-title">Experiment Results</h3>
+          <p class="analysis-text">
+            Performance varies sharply across dimensions, and the gap between explicit cue extraction and deeper creative reasoning remains substantial even for top-tier models.
+          </p>
+          <figure class="analysis-figure">
+            <img src="static/images/combined_radar_plot.png" alt="Radar chart of benchmark results" loading="lazy">
+            <figcaption>Sub-dimension results reveal a persistent weakness in abstract narrative reasoning and multimodal creative comprehension.</figcaption>
+          </figure>
+        </div>
+
+        <div class="analysis-two-column">
+          <div class="analysis-block compact">
+            <h3 class="analysis-title">Cut Understanding</h3>
+            <figure class="analysis-figure">
               <img src="static/images/confusion_matrix_cut.png" alt="Confusion matrix for cut understanding" loading="lazy">
-              <h2 class="subtitle has-text-centered">
-                Models often confuse editing techniques because they capture surface visual shifts but miss narrative intent.
-              </h2>
-            </div>
-            <div class="item">
+              <figcaption>Models often confuse editing operations when they rely on surface-level visual shifts instead of narrative context.</figcaption>
+            </figure>
+          </div>
+
+          <div class="analysis-block compact">
+            <h3 class="analysis-title">Failure Modes</h3>
+            <figure class="analysis-figure">
               <img src="static/images/failure_modes_distribution.png" alt="Failure mode distribution" loading="lazy">
-              <h2 class="subtitle has-text-centered">
-                Low-scoring cases are dominated by semantic misinterpretation, hallucination, and missing key information.
-              </h2>
-            </div>
+              <figcaption>Low-scoring samples are dominated by semantic misinterpretation, hallucination, and missing key information.</figcaption>
+            </figure>
           </div>
         </div>
       </div>
