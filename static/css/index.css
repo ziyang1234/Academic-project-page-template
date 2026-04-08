@@ -367,6 +367,23 @@ body {
   font-weight: 500;
 }
 
+.analysis-carousel {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.analysis-carousel .item {
+  padding: 1.25rem;
+}
+
+.analysis-carousel .item img {
+  max-width: 820px;
+  max-height: 520px;
+  margin: 0 auto;
+  display: block;
+  object-fit: contain;
+}
+
 /* Pagination and Misc Improvements */
 .slider-pagination .slider-page {
   background: var(--primary-color);
@@ -857,5 +874,4 @@ a:focus {
     box-shadow: none !important;
   }
 }
-
 
