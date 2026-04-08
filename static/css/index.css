@@ -327,32 +327,41 @@ body {
   border-radius: var(--border-radius-lg);
   box-shadow: var(--shadow-sm);
   background: var(--background-primary);
+  padding: 0.5rem 0.75rem;
 }
 
 .paper-table {
   width: 100%;
-  border-collapse: collapse;
+  border-collapse: separate;
+  border-spacing: 0;
   min-width: 820px;
+  table-layout: auto;
 }
 
 .paper-table th,
 .paper-table td {
-  padding: 0.9rem 1rem;
+  padding: 0.95rem 1.1rem;
   border-bottom: 1px solid var(--border-color);
   text-align: center;
   font-size: 0.95rem;
+  vertical-align: middle;
+  line-height: 1.35;
 }
 
 .paper-table th:first-child,
 .paper-table td:first-child {
   text-align: left;
   white-space: nowrap;
+  min-width: 220px;
+  padding-left: 1.3rem;
 }
 
 .paper-table thead th {
   background: var(--background-secondary);
   color: var(--text-primary);
   font-weight: 700;
+  white-space: nowrap;
+  border-bottom: 2px solid var(--border-color);
 }
 
 .paper-table tbody tr:hover {
@@ -363,8 +372,67 @@ body {
   background: #eef5ff;
 }
 
+.paper-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.paper-table th:not(:first-child),
+.paper-table td:not(:first-child) {
+  min-width: 88px;
+}
+
+.comparison-table {
+  min-width: 980px;
+}
+
 .comparison-table td {
-  font-size: 1rem;
+  font-size: 1.05rem;
+}
+
+.comparison-table th:not(:first-child),
+.comparison-table td:not(:first-child) {
+  min-width: 96px;
+}
+
+.results-table {
+  min-width: 1180px;
+}
+
+.results-table th:not(:first-child),
+.results-table td:not(:first-child) {
+  min-width: 84px;
+  font-variant-numeric: tabular-nums;
+}
+
+.results-table td {
+  font-size: 0.98rem;
+}
+
+.results-table td strong,
+.results-table th strong {
+  font-weight: 800;
+}
+
+.table-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.9rem;
+  height: 1.9rem;
+  border-radius: 999px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.table-mark.yes {
+  color: #0f766e;
+  background: #ecfeff;
+}
+
+.table-mark.no {
+  color: #64748b;
+  background: #f8fafc;
 }
 
 .stats-carousel,
